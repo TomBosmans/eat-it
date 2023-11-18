@@ -1,0 +1,15 @@
+ARG RUBY_VERSION=3.2.0
+
+FROM ruby:$RUBY_VERSION-slim
+
+# Install dependencies
+RUN apt-get update -qq && apt-get install -y build-essential libvips gnupg2 curl git
+
+# Mount $PWD to this workdir
+WORKDIR /app
+
+# Install Rails
+RUN gem install rails
+
+EXPOSE 3000
+CMD ["rails", "server", "-b", "0.0.0.0"]
