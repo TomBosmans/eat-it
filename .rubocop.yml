@@ -1,0 +1,18 @@
+require:  
+- rubocop-rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+    - 'bin/**/*'
+
+Rails:
+  Enabled: true
+
+Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
