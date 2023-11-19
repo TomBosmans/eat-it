@@ -8,14 +8,14 @@ default: &default
 
 development:
   <<: *default
-  database: app_development
+  database: development
 
 test:
   <<: *default
-  database: app_test
+  database: test
 
 production:
   <<: *default
-  database: app_production
+  database: eat_it 
   username: app
   password: <%= ENV["APP_DATABASE_PASSWORD"] %>
