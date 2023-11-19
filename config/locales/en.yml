@@ -1,9 +1,22 @@
 en:
+  errors:
+    messages:
+      blank: "can't be blank"
+      taken: "has already been taken"
+
   activerecord:
     models:
       ingredient: 'Ingredient'
       recipe: 'Recipe'
+    attributes:
+      ingredient:
+        name: "Name"
+      recipe:
+        name: "Name"
+        content: "Content"
+
   notices:
     created: '%{model} was successfully created.'
     updated: '%{model} was successfully updated.'
     destroyed: '%{model} was successfully destroyed.'
+

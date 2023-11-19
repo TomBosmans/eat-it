@@ -1,8 +1,20 @@
 nl:
+  errors:
+    messages:
+     blank: "mag niet leeg zijn"
+     taken: "is al in gebruik"  
+
   activerecord:
     models:
       ingredient: 'Ingrediënt'
       recipe: 'Recept'
+    attributes:
+      ingredient:
+        name: "Naam"
+      recipe:
+        name: "Naam"
+        content: "Inhoud"
+
   notices:
     created: '%{model} is succesvol aangemaakt.'
     updated: '%{model} is succesvol bijgewerkt.'
