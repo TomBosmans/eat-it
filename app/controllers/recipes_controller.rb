@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class RecipesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_recipe, only: %i[show edit update destroy]
 
   # GET /recipes or /recipes.json
@@ -18,7 +19,9 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/1/edit
-  def edit; end
+  def edit
+    @ingredients = Ingredient.all
+  end
 
   # POST /recipes or /recipes.json
   def create
