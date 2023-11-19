@@ -27,7 +27,7 @@ class IngredientsController < ApplicationController
 
     respond_to do |format|
       if @ingredient.save
-        format.html { redirect_to ingredient_url(@ingredient), notice: 'Ingredient was successfully created.' }
+        format.html { redirect_to ingredient_url(@ingredient), notice: I18n.t('notices.controllers.ingredient.created', model: Ingredient.model_name.human) }
         format.json { render :show, status: :created, location: @ingredient }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class IngredientsController < ApplicationController
   def update
     respond_to do |format|
       if @ingredient.update(ingredient_params)
-        format.html { redirect_to ingredient_url(@ingredient), notice: 'Ingredient was successfully updated.' }
+        format.html { redirect_to ingredient_url(@ingredient), notice: I18n.t('notices.controllers.ingredient.updated', model: Ingredient.model_name.human) }
         format.json { render :show, status: :ok, location: @ingredient }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class IngredientsController < ApplicationController
     @ingredient.destroy!
 
     respond_to do |format|
-      format.html { redirect_to ingredients_url, notice: 'Ingredient was successfully destroyed.' }
+      format.html { redirect_to ingredients_url, notice: I18n.t('notices.controllers.ingredient.destroyed', model: Ingredient.model_name.human) }
       format.json { head :no_content }
     end
   end

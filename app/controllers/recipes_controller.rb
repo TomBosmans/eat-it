@@ -29,7 +29,7 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully created.' }
+        format.html { redirect_to recipe_url(@recipe), notice: I18n.t('notices.controllers.recipe.created', model: Recipe.model_name.human) }
         format.json { render :show, status: :created, location: @recipe }
       else
         @ingredients = Ingredient.all
@@ -43,7 +43,7 @@ class RecipesController < ApplicationController
   def update
     respond_to do |format|
       if @recipe.update(recipe_params)
-        format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully updated.' }
+        format.html { redirect_to recipe_url(@recipe), notice: I18n.t('notices.controllers.recipe.updated', model: Recipe.model_name.human) }
         format.json { render :show, status: :ok, location: @recipe }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -57,7 +57,7 @@ class RecipesController < ApplicationController
     @recipe.destroy!
 
     respond_to do |format|
-      format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
+      format.html { redirect_to recipes_url, notice: I18n.t('notices.controllers.recipe.destroyed', model: Recipe.model_name.human) }
       format.json { head :no_content }
     end
   end

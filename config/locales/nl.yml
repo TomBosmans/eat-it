@@ -1,0 +1,9 @@
+nl:
+  activerecord:
+    models:
+      ingredient: 'Ingrediënt'
+      recipe: 'Recept'
+  notices:
+    created: '%{model} is succesvol aangemaakt.'
+    updated: '%{model} is succesvol bijgewerkt.'
+    destroyed: '%{model} is succesvol verwijderd.'
